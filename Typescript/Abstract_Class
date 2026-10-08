@@ -1,0 +1,25 @@
+abstract class Animal {
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    // Abstract method (must be implemented by derived classes)
+    abstract makeSound(): void;
+
+    // Concrete method
+    sleep(): void {
+        console.log(`${this.name} is sleeping... Zzz`);
+    }
+}
+
+class Dog extends Animal {
+    makeSound(): void {
+        console.log(`${this.name} says: Woof! Woof!`);
+    }
+}
+
+// Example usage:
+const myDog = new Dog("Buddy");
+myDog.makeSound(); // Buddy says: Woof! Woof!
+myDog.sleep();     // Buddy is sleeping... Zzz
